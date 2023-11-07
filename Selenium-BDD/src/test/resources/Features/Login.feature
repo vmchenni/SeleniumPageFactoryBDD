@@ -6,3 +6,4 @@ Feature: Sample Test
     Given Launch URL
     When User logn with valid credentials
     Then Home page is displayed
+    Then Home page is displayed for the loggedIn User

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage_PF {
 
     WebDriver driver;
-    @FindBy(id = "username")
+    private @FindBy(id = "username")
     WebElement txtUserName;
 
     @FindBy(id = "password")
