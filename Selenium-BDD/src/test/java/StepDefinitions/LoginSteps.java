@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -26,8 +27,8 @@ public class LoginSteps {
         // Write code here that turns the phrase above into concrete actions
 //        throw new io.cucumber.java.PendingException();
         System.out.println("launch_url!");
-//        ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("--remote-allow-origins=*");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
         driver.get("https://practice.automationbro.com/my-account/");
@@ -59,4 +60,9 @@ public class LoginSteps {
         System.out.println("Home page is displayed");
     }
 
+    @And("Browser is closed")
+    public void browserIsClosed() {
+        LoginSteps.driver.close();
+        LoginSteps.driver.quit();
+    }
 }

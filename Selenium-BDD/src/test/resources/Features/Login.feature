@@ -7,3 +7,8 @@ Feature: Sample Test
     When User logn with valid credentials
     Then Home page is displayed
     Then Home page is displayed for the loggedIn User
+
+  @SmokeTest
+  Scenario: Login Test
+    Then Home page is displayed
+    And Browser is closed
