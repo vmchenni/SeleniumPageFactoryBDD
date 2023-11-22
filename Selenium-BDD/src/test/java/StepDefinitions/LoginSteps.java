@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -10,11 +11,14 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pagefactory.HomePage_PF;
 import pagefactory.LoginPage_PF;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 
 public class LoginSteps {
@@ -76,4 +80,19 @@ public class LoginSteps {
     public void tearDown(){
         System.out.println("Close the Browser");
     }
+
+    @Then("User gets all country links")
+    public void user_gets_all_country_links(DataTable dataTable) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+        // Double, Byte, Short, Long, BigInteger or BigDecimal.
+        //
+        // For other transformations you can register a DataTableType.
+//        throw new io.cucumber.java.PendingException();
+        List<String> stringList=dataTable.asList();
+        System.out.println("Country list:"+stringList);
+    }
+
 }

@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FFDemo {
     @Test
@@ -26,5 +28,18 @@ public class FFDemo {
 
         webDriver.quit();
 
+    }
+    @Test
+    public void fnTest(){
+        List<String> list= new ArrayList<>();
+        list.add("Hello");
+        list.add("How");
+        list.add("Are");
+        list.add("You");
+        System.out.println(list);
+
+        for (String s: list){
+            System.out.println(s);
+        }
     }
 }

@@ -1,6 +1,8 @@
 @SmokeScenario
 Feature: Sample Test
 
+  Background: Background Steps
+    Given Launch URL
   @SmokeTest
   Scenario: Login Test
     Given Launch URL
@@ -12,3 +14,12 @@ Feature: Sample Test
   Scenario: Login Test
     Then Home page is displayed
     And Browser is closed
+
+
+  @SmokeTest
+  Scenario: Sample Test
+    Then Home page is displayed
+    Then User gets all country links
+    |Aus |
+    |IND |
+    | HK |
