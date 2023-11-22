@@ -1,5 +1,7 @@
 package StepDefinitions;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -64,5 +66,14 @@ public class LoginSteps {
     public void browserIsClosed() {
         LoginSteps.driver.close();
         LoginSteps.driver.quit();
+    }
+    @Before
+    public void setDriver(){
+        System.out.println("Launch the Browser");
+    }
+
+    @After
+    public void tearDown(){
+        System.out.println("Close the Browser");
     }
 }
