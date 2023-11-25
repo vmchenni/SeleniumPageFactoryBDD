@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.manager.SeleniumManager;
 
 public class HomePageSteps {
     @Then("Home page is displayed for the loggedIn User$")
